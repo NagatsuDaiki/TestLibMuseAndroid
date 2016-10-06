@@ -5,12 +5,35 @@
 
 package com.choosemuse.example.libmuse;
 
-import java.io.File;
-import java.lang.ref.WeakReference;
-import java.util.ArrayList;
-import java.util.List;
-
-import java.util.concurrent.atomic.AtomicReference;
+import android.Manifest;
+import android.accounts.AccountManager;
+import android.app.Activity;
+import android.app.AlertDialog;
+import android.app.Dialog;
+import android.app.ProgressDialog;
+import android.content.Context;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
+import android.os.AsyncTask;
+import android.os.Bundle;
+import android.os.Environment;
+import android.os.Handler;
+import android.os.Looper;
+import android.support.annotation.NonNull;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
+import android.text.TextUtils;
+import android.util.Log;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.Spinner;
+import android.widget.TextView;
 
 import com.choosemuse.libmuse.Accelerometer;
 import com.choosemuse.libmuse.AnnotationData;
@@ -34,28 +57,35 @@ import com.choosemuse.libmuse.MuseManagerAndroid;
 import com.choosemuse.libmuse.MuseVersion;
 import com.choosemuse.libmuse.Result;
 import com.choosemuse.libmuse.ResultLevel;
+import com.google.android.gms.common.ConnectionResult;
+import com.google.android.gms.common.GoogleApiAvailability;
+import com.google.api.client.extensions.android.http.AndroidHttp;
+import com.google.api.client.googleapis.extensions.android.gms.auth.GoogleAccountCredential;
+import com.google.api.client.googleapis.extensions.android.gms.auth.GooglePlayServicesAvailabilityIOException;
+import com.google.api.client.googleapis.extensions.android.gms.auth.UserRecoverableAuthIOException;
+import com.google.api.client.http.HttpTransport;
+import com.google.api.client.json.JsonFactory;
+import com.google.api.client.json.jackson2.JacksonFactory;
+import com.google.api.client.util.ExponentialBackOff;
+import com.google.api.client.util.Throwables;
+import com.google.api.services.sheets.v4.SheetsScopes;
+import com.google.api.services.sheets.v4.model.AddSheetRequest;
+import com.google.api.services.sheets.v4.model.BatchUpdateSpreadsheetRequest;
+import com.google.api.services.sheets.v4.model.BatchUpdateSpreadsheetResponse;
+import com.google.api.services.sheets.v4.model.Request;
+import com.google.api.services.sheets.v4.model.SheetProperties;
+import com.google.api.services.sheets.v4.model.ValueRange;
 
-import android.Manifest;
-import android.app.Activity;
-import android.app.AlertDialog;
-import android.content.DialogInterface;
-import android.content.Intent;
-import android.content.pm.PackageManager;
-import android.os.Bundle;
-import android.os.Environment;
-import android.os.Looper;
-import android.os.Handler;
-import android.util.Log;
-import android.view.View;
-import android.view.View.OnClickListener;
-import android.widget.ArrayAdapter;
-import android.widget.Button;
-import android.widget.Spinner;
-import android.widget.TextView;
+import java.io.File;
+import java.io.IOException;
+import java.lang.ref.WeakReference;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.concurrent.atomic.AtomicReference;
 
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.content.ContextCompat;
-import android.widget.Toast;
+import pub.devrel.easypermissions.AfterPermissionGranted;
+import pub.devrel.easypermissions.EasyPermissions;
 
 /**
  * This example will illustrate how to connect to a Muse headband,
@@ -78,8 +108,21 @@ import android.widget.Toast;
  * 7. You can pause/resume data transmission with the button at the bottom of the screen.
  * 8. To disconnect from the headband, press "Disconnect"
  */
-public class MainActivity extends Activity implements OnClickListener {
+public class MainActivity extends Activity implements OnClickListener, EasyPermissions.PermissionCallbacks {
+    GoogleAccountCredential mCredential;
+    private TextView mOutputText;
+    private Button mCallApiButton;
+    ProgressDialog mProgress;
+    List row = new ArrayList<>();
 
+    static final int REQUEST_ACCOUNT_PICKER = 1000;
+    static final int REQUEST_AUTHORIZATION = 1001;
+    static final int REQUEST_GOOGLE_PLAY_SERVICES = 1002;
+    static final int REQUEST_PERMISSION_GET_ACCOUNTS = 1003;
+
+    private static final String BUTTON_TEXT = "API";
+    private static final String PREF_ACCOUNT_NAME = "accountName";
+    private static final String[] SCOPES = {SheetsScopes.SPREADSHEETS};
     /**
      * Tag used for logging purposes.
      */
@@ -149,13 +192,6 @@ public class MainActivity extends Activity implements OnClickListener {
     private final double[] gammaBuffer = new double[6];
     private boolean gammaStale;
 
-    ArrayList<Double> accelList = new ArrayList<>();
-    ArrayList<Double> deltaList = new ArrayList<>();
-    ArrayList<Double> thetaList = new ArrayList<>();
-    ArrayList<Double> alphaList = new ArrayList<>();
-    ArrayList<Double> betaList = new ArrayList<>();
-    ArrayList<Double> gammaList = new ArrayList<>();
-
 
     /**
      * We will be updating the UI using a handler instead of in packet handlers because
@@ -189,6 +225,9 @@ public class MainActivity extends Activity implements OnClickListener {
      * to a handler on a separate thread.
      */
     private final AtomicReference<Handler> fileHandler = new AtomicReference<>();
+    private boolean isCreated = false;
+    private int currentRows = 0;
+    private String sheetName = "";
 
 
     //--------------------------------------
@@ -231,6 +270,20 @@ public class MainActivity extends Activity implements OnClickListener {
 
         // Start our asynchronous updates of the UI.
         handler.post(tickUi);
+
+        mCallApiButton = (Button) findViewById(R.id.api);
+
+        mOutputText = (TextView) findViewById(R.id.outputText);
+        mOutputText.setText(
+                "Click the \'" + BUTTON_TEXT + "\' button to test the API.");
+
+        mProgress = new ProgressDialog(this);
+        mProgress.setMessage("Calling Google Sheets API ...");
+
+        // Initialize credentials and service object.
+        mCredential = GoogleAccountCredential.usingOAuth2(
+                getApplicationContext(), Arrays.asList(SCOPES))
+                .setBackOff(new ExponentialBackOff());
     }
 
     protected void onPause() {
@@ -259,6 +312,9 @@ public class MainActivity extends Activity implements OnClickListener {
             // which headband the user wants to connect to we can stop
             // listening for other headbands.
             manager.stopListening();
+            sheetName = String.valueOf(System.currentTimeMillis());
+            isCreated = false;
+            currentRows = 0;
 
             List<Muse> availableMuses = manager.getMuses();
             Spinner musesSpinner = (Spinner) findViewById(R.id.muses_spinner);
@@ -312,74 +368,13 @@ public class MainActivity extends Activity implements OnClickListener {
                 dataTransmission = !dataTransmission;
                 muse.enableDataTransmission(dataTransmission);
             }
-        } else if (v.getId() == R.id.transmission) {
-            Intent intent = new Intent(Intent.ACTION_MAIN);
-            intent.setClassName("com.example.sheetsquickstart", "com.example.sheetsquickstart.MainActivity");
-            double[] ac = new double[accelList.size()];
-            for (int i = 0; i < ac.length; i++) {
-                ac[i] = accelList.get(i);
-            }
-            double[] d = new double[deltaList.size()];
-            for (int i = 0; i < d.length; i++) {
-                if (Double.isNaN(deltaList.get(i))) {
-                    d[i] = 0;
-                } else {
-                    d[i] = deltaList.get(i);
-                }
-            }
-            double[] t = new double[thetaList.size()];
-            for (int i = 0; i < t.length; i++) {
-                if (Double.isNaN(thetaList.get(i))) {
-                    t[i] = 0;
-                } else {
-                    t[i] = thetaList.get(i);
-                }
-            }
-            double[] a = new double[alphaList.size()];
-            for (int i = 0; i < a.length; i++) {
-                if (Double.isNaN(alphaList.get(i))) {
-                    a[i] = 0;
-                } else {
-                    a[i] = alphaList.get(i);
-                }
-            }
-            double[] b = new double[betaList.size()];
-            for (int i = 0; i < b.length; i++) {
-                if (Double.isNaN(betaList.get(i))) {
-                    b[i] = 0;
-                } else {
-                    b[i] = betaList.get(i);
-                }
-            }
-            double[] g = new double[gammaList.size()];
-            for (int i = 0; i < g.length; i++) {
-                if (Double.isNaN(gammaList.get(i))) {
-                    g[i] = 0;
-                } else {
-                    g[i] = gammaList.get(i);
-                }
-            }
-
-            intent.putExtra("accel", ac);
-            intent.putExtra("delta", d);
-            intent.putExtra("theta", t);
-            intent.putExtra("alpha", a);
-            intent.putExtra("beta", b);
-            intent.putExtra("gamma", g);
-
-            try {
-                startActivity(intent);
-            } catch (Exception e) {
-                Toast.makeText(this, "対象のアプリがありません", Toast.LENGTH_SHORT).show();
-            }
-
         } else if (v.getId() == R.id.startButton) {
-            alphaList.clear();
-            betaList.clear();
-            gammaList.clear();
-            thetaList.clear();
-            deltaList.clear();
-            accelList.clear();
+            row.clear();
+        } else if (v.getId() == R.id.api) {
+            mCallApiButton.setEnabled(false);
+            mOutputText.setText("");
+            getResultsFromApi();
+            mCallApiButton.setEnabled(true);
         }
 
 
@@ -585,58 +580,14 @@ public class MainActivity extends Activity implements OnClickListener {
         buffer[3] = p.getEegChannelValue(Eeg.EEG4);
         buffer[4] = p.getEegChannelValue(Eeg.AUX_LEFT);
         buffer[5] = p.getEegChannelValue(Eeg.AUX_RIGHT);
-
-
-        //追加分
-        switch (p.packetType()) {
-            case DELTA_RELATIVE:
-                deltaList.add((double) p.timestamp());
-                deltaList.add(deltaBuffer[0]);
-                deltaList.add(deltaBuffer[1]);
-                deltaList.add(deltaBuffer[2]);
-                deltaList.add(deltaBuffer[3]);
-                break;
-            case THETA_RELATIVE:
-                thetaList.add((double) p.timestamp());
-                thetaList.add(thetaBuffer[0]);
-                thetaList.add(thetaBuffer[1]);
-                thetaList.add(thetaBuffer[2]);
-                thetaList.add(thetaBuffer[3]);
-                break;
-            case ALPHA_RELATIVE:
-                alphaList.add((double) p.timestamp());
-                alphaList.add(alphaBuffer[0]);
-                alphaList.add(alphaBuffer[1]);
-                alphaList.add(alphaBuffer[2]);
-                alphaList.add(alphaBuffer[3]);
-                break;
-            case BETA_RELATIVE:
-                betaList.add((double) p.timestamp());
-                betaList.add((betaBuffer[0]));
-                betaList.add((betaBuffer[1]));
-                betaList.add((betaBuffer[2]));
-                betaList.add((betaBuffer[3]));
-                break;
-            case GAMMA_RELATIVE:
-                gammaList.add((double) p.timestamp());
-                gammaList.add(gammaBuffer[0]);
-                gammaList.add(gammaBuffer[1]);
-                gammaList.add(gammaBuffer[2]);
-                gammaList.add(gammaBuffer[3]);
-                break;
-        }
+        row.add(Arrays.asList(p.timestamp(), p.packetType().name(), buffer[0], buffer[1], buffer[2], buffer[3]));
     }
 
     private void getAccelValues(MuseDataPacket p) {
         accelBuffer[0] = p.getAccelerometerValue(Accelerometer.X);
         accelBuffer[1] = p.getAccelerometerValue(Accelerometer.Y);
         accelBuffer[2] = p.getAccelerometerValue(Accelerometer.Z);
-
-        //追加分
-        accelList.add((double) p.timestamp());
-        accelList.add(accelBuffer[0]);
-        accelList.add(accelBuffer[1]);
-        accelList.add(accelBuffer[2]);
+        row.add(Arrays.asList(p.timestamp(), p.packetType().name(), accelBuffer[0], accelBuffer[1], accelBuffer[2]));
     }
 
 
@@ -658,8 +609,8 @@ public class MainActivity extends Activity implements OnClickListener {
         pauseButton.setOnClickListener(this);
         Button start = (Button) findViewById(R.id.startButton);
         start.setOnClickListener(this);
-        Button send = (Button) findViewById(R.id.transmission);
-        send.setOnClickListener(this);
+        Button api = (Button) findViewById(R.id.api);
+        api.setOnClickListener(this);
 
         spinnerAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item);
         Spinner musesSpinner = (Spinner) findViewById(R.id.muses_spinner);
@@ -925,6 +876,317 @@ public class MainActivity extends Activity implements OnClickListener {
 
             // Read the next message.
             res = fileReader.gotoNextMessage();
+        }
+    }
+
+    /**
+     * Attempt to call the API, after verifying that all the preconditions are
+     * satisfied. The preconditions are: Google Play Services installed, an
+     * account was selected and the device currently has online access. If any
+     * of the preconditions are not satisfied, the app will prompt the user as
+     * appropriate.
+     */
+    private void getResultsFromApi() {
+        if (!isGooglePlayServicesAvailable()) {
+            acquireGooglePlayServices();
+        } else if (mCredential.getSelectedAccountName() == null) {
+            chooseAccount();
+        } else if (!isDeviceOnline()) {
+            mOutputText.setText("No network connection available.");
+        } else {
+            new MakeRequestTask(mCredential).execute();
+        }
+    }
+
+    /**
+     * Attempts to set the account used with the API credentials. If an account
+     * name was previously saved it will use that one; otherwise an account
+     * picker dialog will be shown to the user. Note that the setting the
+     * account to use with the credentials object requires the app to have the
+     * GET_ACCOUNTS permission, which is requested here if it is not already
+     * present. The AfterPermissionGranted annotation indicates that this
+     * function will be rerun automatically whenever the GET_ACCOUNTS permission
+     * is granted.
+     */
+    @AfterPermissionGranted(REQUEST_PERMISSION_GET_ACCOUNTS)
+    private void chooseAccount() {
+        if (EasyPermissions.hasPermissions(
+                this, Manifest.permission.GET_ACCOUNTS)) {
+            String accountName = getPreferences(Context.MODE_PRIVATE)
+                    .getString(PREF_ACCOUNT_NAME, null);
+            if (accountName != null) {
+                mCredential.setSelectedAccountName(accountName);
+                getResultsFromApi();
+            } else {
+                // Start a dialog from which the user can choose an account
+                startActivityForResult(
+                        mCredential.newChooseAccountIntent(),
+                        REQUEST_ACCOUNT_PICKER);
+            }
+        } else {
+            // Request the GET_ACCOUNTS permission via a user dialog
+            EasyPermissions.requestPermissions(
+                    this,
+                    "This app needs to access your Google account (via Contacts).",
+                    REQUEST_PERMISSION_GET_ACCOUNTS,
+                    Manifest.permission.GET_ACCOUNTS);
+        }
+    }
+
+    /**
+     * Called when an activity launched here (specifically, AccountPicker
+     * and authorization) exits, giving you the requestCode you started it with,
+     * the resultCode it returned, and any additional data from it.
+     *
+     * @param requestCode code indicating which activity result is incoming.
+     * @param resultCode  code indicating the result of the incoming
+     *                    activity result.
+     * @param data        Intent (containing result data) returned by incoming
+     *                    activity result.
+     */
+    @Override
+    protected void onActivityResult(
+            int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        switch (requestCode) {
+            case REQUEST_GOOGLE_PLAY_SERVICES:
+                if (resultCode != RESULT_OK) {
+                    mOutputText.setText(
+                            "This app requires Google Play Services. Please install " +
+                                    "Google Play Services on your device and relaunch this app.");
+                } else {
+                    getResultsFromApi();
+                }
+                break;
+            case REQUEST_ACCOUNT_PICKER:
+                if (resultCode == RESULT_OK && data != null &&
+                        data.getExtras() != null) {
+                    String accountName =
+                            data.getStringExtra(AccountManager.KEY_ACCOUNT_NAME);
+                    if (accountName != null) {
+                        SharedPreferences settings =
+                                getPreferences(Context.MODE_PRIVATE);
+                        SharedPreferences.Editor editor = settings.edit();
+                        editor.putString(PREF_ACCOUNT_NAME, accountName);
+                        editor.apply();
+                        mCredential.setSelectedAccountName(accountName);
+                        getResultsFromApi();
+                    }
+                }
+                break;
+            case REQUEST_AUTHORIZATION:
+                if (resultCode == RESULT_OK) {
+                    getResultsFromApi();
+                }
+                break;
+        }
+    }
+
+    /**
+     * Respond to requests for permissions at runtime for API 23 and above.
+     *
+     * @param requestCode  The request code passed in
+     *                     requestPermissions(android.app.Activity, String, int, String[])
+     * @param permissions  The requested permissions. Never null.
+     * @param grantResults The grant results for the corresponding permissions
+     *                     which is either PERMISSION_GRANTED or PERMISSION_DENIED. Never null.
+     */
+    @Override
+    public void onRequestPermissionsResult(int requestCode,
+                                           @NonNull String[] permissions,
+                                           @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        EasyPermissions.onRequestPermissionsResult(
+                requestCode, permissions, grantResults, this);
+    }
+
+    /**
+     * Callback for when a permission is granted using the EasyPermissions
+     * library.
+     *
+     * @param requestCode The request code associated with the requested
+     *                    permission
+     * @param list        The requested permission list. Never null.
+     */
+    @Override
+    public void onPermissionsGranted(int requestCode, List<String> list) {
+        // Do nothing.
+    }
+
+    /**
+     * Callback for when a permission is denied using the EasyPermissions
+     * library.
+     *
+     * @param requestCode The request code associated with the requested
+     *                    permission
+     * @param list        The requested permission list. Never null.
+     */
+    @Override
+    public void onPermissionsDenied(int requestCode, List<String> list) {
+        // Do nothing.
+    }
+
+    /**
+     * Checks whether the device currently has a network connection.
+     *
+     * @return true if the device has a network connection, false otherwise.
+     */
+    private boolean isDeviceOnline() {
+        ConnectivityManager connMgr =
+                (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
+        return (networkInfo != null && networkInfo.isConnected());
+    }
+
+    /**
+     * Check that Google Play services APK is installed and up to date.
+     *
+     * @return true if Google Play Services is available and up to
+     * date on this device; false otherwise.
+     */
+    private boolean isGooglePlayServicesAvailable() {
+        GoogleApiAvailability apiAvailability =
+                GoogleApiAvailability.getInstance();
+        final int connectionStatusCode =
+                apiAvailability.isGooglePlayServicesAvailable(this);
+        return connectionStatusCode == ConnectionResult.SUCCESS;
+    }
+
+    /**
+     * Attempt to resolve a missing, out-of-date, invalid or disabled Google
+     * Play Services installation via a user dialog, if possible.
+     */
+    private void acquireGooglePlayServices() {
+        GoogleApiAvailability apiAvailability =
+                GoogleApiAvailability.getInstance();
+        final int connectionStatusCode =
+                apiAvailability.isGooglePlayServicesAvailable(this);
+        if (apiAvailability.isUserResolvableError(connectionStatusCode)) {
+            showGooglePlayServicesAvailabilityErrorDialog(connectionStatusCode);
+        }
+    }
+
+
+    /**
+     * Display an error dialog showing that Google Play Services is missing
+     * or out of date.
+     *
+     * @param connectionStatusCode code describing the presence (or lack of)
+     *                             Google Play Services on this device.
+     */
+    void showGooglePlayServicesAvailabilityErrorDialog(
+            final int connectionStatusCode) {
+        GoogleApiAvailability apiAvailability = GoogleApiAvailability.getInstance();
+        Dialog dialog = apiAvailability.getErrorDialog(
+                MainActivity.this,
+                connectionStatusCode,
+                REQUEST_GOOGLE_PLAY_SERVICES);
+        dialog.show();
+    }
+
+    /**
+     * An asynchronous task that handles the Google Sheets API call.
+     * Placing the API calls in their own task ensures the UI stays responsive.
+     */
+    private class MakeRequestTask extends AsyncTask<Void, Void, List<String>> {
+        private com.google.api.services.sheets.v4.Sheets mService = null;
+        private Exception mLastError = null;
+        private String spreadsheetId = "17-SJPzhBi1XlFC0Agg8h3VHT7MWzmPaz_rtHqvTCF8A";
+
+        public MakeRequestTask(GoogleAccountCredential credential) {
+            HttpTransport transport = AndroidHttp.newCompatibleTransport();
+            JsonFactory jsonFactory = JacksonFactory.getDefaultInstance();
+            mService = new com.google.api.services.sheets.v4.Sheets.Builder(
+                    transport, jsonFactory, credential)
+                    .setApplicationName("Google Sheets API Android Quickstart")
+                    .build();
+        }
+
+        /**
+         * Background task to call Google Sheets API.
+         *
+         * @param params no parameters needed for this task.
+         */
+        @Override
+        protected List<String> doInBackground(Void... params) {
+            try {
+                return putDataToNewSheetFromApi();
+            } catch (Exception e) {
+                mLastError = e;
+                cancel(true);
+                return null;
+            }
+        }
+
+        private List<String> putDataToNewSheetFromApi() throws IOException {
+            if (!isCreated) {
+                BatchUpdateSpreadsheetRequest content = new BatchUpdateSpreadsheetRequest();
+                List<Request> requests = new ArrayList<>();
+                Request e = new Request();
+                AddSheetRequest addSheet = new AddSheetRequest();
+                SheetProperties properties = new SheetProperties();
+                properties.setTitle(sheetName);
+                properties.setIndex(1);
+                addSheet.setProperties(properties);
+                e.setAddSheet(addSheet);
+                requests.add(e);
+                content.setRequests(requests);
+                BatchUpdateSpreadsheetResponse response = this.mService.spreadsheets().batchUpdate(
+                        spreadsheetId,
+                        content
+                ).execute();
+                isCreated = true;
+            }
+            List data = new ArrayList<>(row);
+            row.clear();
+            ValueRange valueRange = new ValueRange();
+            valueRange.setValues(data);
+            String range = sheetName + "!A" + (currentRows + 1) + ":F" + (currentRows + data.size());
+            currentRows += data.size();
+            valueRange.setRange(range);
+            this.mService.spreadsheets().values()
+                    .update(spreadsheetId, range, valueRange)
+                    .setValueInputOption("RAW")
+                    .execute();
+            return Arrays.asList("Send data");
+        }
+
+
+        @Override
+        protected void onPreExecute() {
+            mOutputText.setText("");
+            mProgress.show();
+        }
+
+        @Override
+        protected void onPostExecute(List<String> output) {
+            mProgress.hide();
+            if (output == null || output.size() == 0) {
+                mOutputText.setText("No results returned.");
+            } else {
+                mOutputText.setText(TextUtils.join("\n", output));
+            }
+        }
+
+        @Override
+        protected void onCancelled() {
+            mProgress.hide();
+            if (mLastError != null) {
+                if (mLastError instanceof GooglePlayServicesAvailabilityIOException) {
+                    showGooglePlayServicesAvailabilityErrorDialog(
+                            ((GooglePlayServicesAvailabilityIOException) mLastError)
+                                    .getConnectionStatusCode());
+                } else if (mLastError instanceof UserRecoverableAuthIOException) {
+                    startActivityForResult(
+                            ((UserRecoverableAuthIOException) mLastError).getIntent(),
+                            MainActivity.REQUEST_AUTHORIZATION);
+                } else {
+                    mOutputText.setText("The error occurred...");
+                    Log.d(TAG, "onCancelled: " + mLastError.getMessage());
+                }
+            } else {
+                mOutputText.setText("Request cancelled.");
+            }
         }
     }
 

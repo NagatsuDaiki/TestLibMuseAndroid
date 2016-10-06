@@ -27,19 +27,35 @@
 	        android:layout_height="40dp"
 	        android:text="@string/disconnect" />
 	</LinearLayout>
+
+	<LinearLayout
+		android:orientation="horizontal"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:layout_weight="1">
+
+		<TextView
+               android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textSize="16sp"
+            android:text="@string/status" />
+
+		<TextView
+            android:id="@+id/con_status"
+               android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textSize="16sp"
+            android:text="@string/undefined" />
+	</LinearLayout>
+
 	<TextView
-   		android:layout_width="match_parent"
-    	android:layout_height="match_parent"
-    	android:layout_weight="1"
-    	android:textSize="16sp"
-    	android:text="@string/status" />
-  	<TextView
-    	android:id="@+id/con_status"
-   		android:layout_width="match_parent"
-    	android:layout_height="match_parent"
-    	android:layout_weight="1"
-    	android:textSize="16sp"
-    	android:text="@string/undefined" />
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:layout_weight="1"
+		android:textSize="16sp"
+		android:id="@+id/outputText" />
 
 	<TextView
    		android:layout_width="match_parent"
@@ -47,7 +63,8 @@
     	android:layout_weight="1"
     	android:textSize="16sp"
     	android:text="@string/accel" />
-    	<LinearLayout
+
+	<LinearLayout
 	        android:layout_width="match_parent"
 	        android:layout_height="match_parent"
 	        android:layout_weight="1"
@@ -323,8 +340,8 @@
 		<Button
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
-			android:text="送信"
-			android:id="@+id/transmission" />
+			android:text="API"
+			android:id="@+id/api" />
 	</LinearLayout>
 
 </LinearLayout>

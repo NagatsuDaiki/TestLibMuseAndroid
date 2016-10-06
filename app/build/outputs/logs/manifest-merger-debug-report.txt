@@ -1,8 +1,6 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\NagatsuDaiki\libmuse_5.13.0\android\examples\TestLibMuseAndroid\app\src\main\AndroidManifest.xml:2:1-34:12
-	xmlns:android
-		ADDED from C:\Users\NagatsuDaiki\libmuse_5.13.0\android\examples\TestLibMuseAndroid\app\src\main\AndroidManifest.xml:2:11-69
+ADDED from C:\Users\NagatsuDaiki\libmuse_5.13.0\android\examples\TestLibMuseAndroid\app\src\main\AndroidManifest.xml:2:1-36:12
 	package
 		ADDED from C:\Users\NagatsuDaiki\libmuse_5.13.0\android\examples\TestLibMuseAndroid\app\src\main\AndroidManifest.xml:3:5-45
 		INJECTED from C:\Users\NagatsuDaiki\libmuse_5.13.0\android\examples\TestLibMuseAndroid\app\src\main\AndroidManifest.xml
@@ -15,6 +13,8 @@ ADDED from C:\Users\NagatsuDaiki\libmuse_5.13.0\android\examples\TestLibMuseAndr
 		ADDED from C:\Users\NagatsuDaiki\libmuse_5.13.0\android\examples\TestLibMuseAndroid\app\src\main\AndroidManifest.xml:4:5-28
 		INJECTED from C:\Users\NagatsuDaiki\libmuse_5.13.0\android\examples\TestLibMuseAndroid\app\src\main\AndroidManifest.xml
 		INJECTED from C:\Users\NagatsuDaiki\libmuse_5.13.0\android\examples\TestLibMuseAndroid\app\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from C:\Users\NagatsuDaiki\libmuse_5.13.0\android\examples\TestLibMuseAndroid\app\src\main\AndroidManifest.xml:2:11-69
 uses-permission#android.permission.ACCESS_COARSE_LOCATION
 ADDED from C:\Users\NagatsuDaiki\libmuse_5.13.0\android\examples\TestLibMuseAndroid\app\src\main\AndroidManifest.xml:7:5-81
 	android:name
@@ -31,43 +31,112 @@ uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
 ADDED from C:\Users\NagatsuDaiki\libmuse_5.13.0\android\examples\TestLibMuseAndroid\app\src\main\AndroidManifest.xml:10:5-81
 	android:name
 		ADDED from C:\Users\NagatsuDaiki\libmuse_5.13.0\android\examples\TestLibMuseAndroid\app\src\main\AndroidManifest.xml:10:22-78
+uses-permission#android.permission.INTERNET
+ADDED from C:\Users\NagatsuDaiki\libmuse_5.13.0\android\examples\TestLibMuseAndroid\app\src\main\AndroidManifest.xml:11:5-67
+	android:name
+		ADDED from C:\Users\NagatsuDaiki\libmuse_5.13.0\android\examples\TestLibMuseAndroid\app\src\main\AndroidManifest.xml:11:22-64
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from C:\Users\NagatsuDaiki\libmuse_5.13.0\android\examples\TestLibMuseAndroid\app\src\main\AndroidManifest.xml:12:5-79
+	android:name
+		ADDED from C:\Users\NagatsuDaiki\libmuse_5.13.0\android\examples\TestLibMuseAndroid\app\src\main\AndroidManifest.xml:12:22-76
+uses-permission#android.permission.GET_ACCOUNTS
+ADDED from C:\Users\NagatsuDaiki\libmuse_5.13.0\android\examples\TestLibMuseAndroid\app\src\main\AndroidManifest.xml:13:5-71
+	android:name
+		ADDED from C:\Users\NagatsuDaiki\libmuse_5.13.0\android\examples\TestLibMuseAndroid\app\src\main\AndroidManifest.xml:13:22-68
 uses-sdk
-ADDED from C:\Users\NagatsuDaiki\libmuse_5.13.0\android\examples\TestLibMuseAndroid\app\src\main\AndroidManifest.xml:13:5-15:41
+ADDED from C:\Users\NagatsuDaiki\libmuse_5.13.0\android\examples\TestLibMuseAndroid\app\src\main\AndroidManifest.xml:15:5-17:41
+MERGED from [com.google.android.gms:play-services-auth:9.0.2] C:\Users\NagatsuDaiki\libmuse_5.13.0\android\examples\TestLibMuseAndroid\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-auth\9.0.2\AndroidManifest.xml:18:5-43
+MERGED from [com.google.android.gms:play-services-auth-base:9.0.2] C:\Users\NagatsuDaiki\libmuse_5.13.0\android\examples\TestLibMuseAndroid\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-auth-base\9.0.2\AndroidManifest.xml:5:5-43
+MERGED from [com.google.android.gms:play-services-base:9.0.2] C:\Users\NagatsuDaiki\libmuse_5.13.0\android\examples\TestLibMuseAndroid\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-base\9.0.2\AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-basement:9.0.2] C:\Users\NagatsuDaiki\libmuse_5.13.0\android\examples\TestLibMuseAndroid\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\9.0.2\AndroidManifest.xml:18:5-42
 MERGED from [com.android.support:support-v4:23.1.1] C:\Users\NagatsuDaiki\libmuse_5.13.0\android\examples\TestLibMuseAndroid\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\AndroidManifest.xml:20:5-43
+MERGED from [com.google.firebase:firebase-common:9.0.2] C:\Users\NagatsuDaiki\libmuse_5.13.0\android\examples\TestLibMuseAndroid\app\build\intermediates\exploded-aar\com.google.firebase\firebase-common\9.0.2\AndroidManifest.xml:4:5-43
+MERGED from [com.google.android.gms:play-services-tasks:9.0.2] C:\Users\NagatsuDaiki\libmuse_5.13.0\android\examples\TestLibMuseAndroid\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-tasks\9.0.2\AndroidManifest.xml:4:5-43
+MERGED from [pub.devrel:easypermissions:0.1.5] C:\Users\NagatsuDaiki\libmuse_5.13.0\android\examples\TestLibMuseAndroid\app\build\intermediates\exploded-aar\pub.devrel\easypermissions\0.1.5\AndroidManifest.xml:8:5-10:41
+MERGED from [com.android.support:appcompat-v7:23.1.1] C:\Users\NagatsuDaiki\libmuse_5.13.0\android\examples\TestLibMuseAndroid\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.1.1\AndroidManifest.xml:20:5-43
 	android:targetSdkVersion
-		ADDED from C:\Users\NagatsuDaiki\libmuse_5.13.0\android\examples\TestLibMuseAndroid\app\src\main\AndroidManifest.xml:15:9-38
+		ADDED from C:\Users\NagatsuDaiki\libmuse_5.13.0\android\examples\TestLibMuseAndroid\app\src\main\AndroidManifest.xml:17:9-38
 		INJECTED from C:\Users\NagatsuDaiki\libmuse_5.13.0\android\examples\TestLibMuseAndroid\app\src\main\AndroidManifest.xml
 		INJECTED from C:\Users\NagatsuDaiki\libmuse_5.13.0\android\examples\TestLibMuseAndroid\app\src\main\AndroidManifest.xml
 	android:minSdkVersion
-		ADDED from C:\Users\NagatsuDaiki\libmuse_5.13.0\android\examples\TestLibMuseAndroid\app\src\main\AndroidManifest.xml:14:9-35
+		ADDED from C:\Users\NagatsuDaiki\libmuse_5.13.0\android\examples\TestLibMuseAndroid\app\src\main\AndroidManifest.xml:16:9-35
 		INJECTED from C:\Users\NagatsuDaiki\libmuse_5.13.0\android\examples\TestLibMuseAndroid\app\src\main\AndroidManifest.xml
 		INJECTED from C:\Users\NagatsuDaiki\libmuse_5.13.0\android\examples\TestLibMuseAndroid\app\src\main\AndroidManifest.xml
 application
-ADDED from C:\Users\NagatsuDaiki\libmuse_5.13.0\android\examples\TestLibMuseAndroid\app\src\main\AndroidManifest.xml:17:5-32:19
+ADDED from C:\Users\NagatsuDaiki\libmuse_5.13.0\android\examples\TestLibMuseAndroid\app\src\main\AndroidManifest.xml:19:5-34:19
+MERGED from [com.google.android.gms:play-services-auth:9.0.2] C:\Users\NagatsuDaiki\libmuse_5.13.0\android\examples\TestLibMuseAndroid\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-auth\9.0.2\AndroidManifest.xml:20:5-32:19
+MERGED from [com.google.android.gms:play-services-base:9.0.2] C:\Users\NagatsuDaiki\libmuse_5.13.0\android\examples\TestLibMuseAndroid\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-base\9.0.2\AndroidManifest.xml:19:5-23:19
+MERGED from [com.google.android.gms:play-services-basement:9.0.2] C:\Users\NagatsuDaiki\libmuse_5.13.0\android\examples\TestLibMuseAndroid\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\9.0.2\AndroidManifest.xml:20:5-24:19
 MERGED from [com.android.support:support-v4:23.1.1] C:\Users\NagatsuDaiki\libmuse_5.13.0\android\examples\TestLibMuseAndroid\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\AndroidManifest.xml:22:5-20
+MERGED from [com.google.firebase:firebase-common:9.0.2] C:\Users\NagatsuDaiki\libmuse_5.13.0\android\examples\TestLibMuseAndroid\app\build\intermediates\exploded-aar\com.google.firebase\firebase-common\9.0.2\AndroidManifest.xml:5:5-12:19
+MERGED from [com.google.android.gms:play-services-tasks:9.0.2] C:\Users\NagatsuDaiki\libmuse_5.13.0\android\examples\TestLibMuseAndroid\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-tasks\9.0.2\AndroidManifest.xml:5:5-20
+MERGED from [pub.devrel:easypermissions:0.1.5] C:\Users\NagatsuDaiki\libmuse_5.13.0\android\examples\TestLibMuseAndroid\app\build\intermediates\exploded-aar\pub.devrel\easypermissions\0.1.5\AndroidManifest.xml:12:5-20
+MERGED from [com.android.support:appcompat-v7:23.1.1] C:\Users\NagatsuDaiki\libmuse_5.13.0\android\examples\TestLibMuseAndroid\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.1.1\AndroidManifest.xml:22:5-20
 	android:label
-		ADDED from C:\Users\NagatsuDaiki\libmuse_5.13.0\android\examples\TestLibMuseAndroid\app\src\main\AndroidManifest.xml:20:9-41
+		ADDED from C:\Users\NagatsuDaiki\libmuse_5.13.0\android\examples\TestLibMuseAndroid\app\src\main\AndroidManifest.xml:22:9-41
 	android:allowBackup
-		ADDED from C:\Users\NagatsuDaiki\libmuse_5.13.0\android\examples\TestLibMuseAndroid\app\src\main\AndroidManifest.xml:18:9-35
+		ADDED from C:\Users\NagatsuDaiki\libmuse_5.13.0\android\examples\TestLibMuseAndroid\app\src\main\AndroidManifest.xml:20:9-35
 	android:icon
-		ADDED from C:\Users\NagatsuDaiki\libmuse_5.13.0\android\examples\TestLibMuseAndroid\app\src\main\AndroidManifest.xml:19:9-45
+		ADDED from C:\Users\NagatsuDaiki\libmuse_5.13.0\android\examples\TestLibMuseAndroid\app\src\main\AndroidManifest.xml:21:9-45
 	android:theme
-		ADDED from C:\Users\NagatsuDaiki\libmuse_5.13.0\android\examples\TestLibMuseAndroid\app\src\main\AndroidManifest.xml:21:9-40
+		ADDED from C:\Users\NagatsuDaiki\libmuse_5.13.0\android\examples\TestLibMuseAndroid\app\src\main\AndroidManifest.xml:23:9-40
 activity#com.choosemuse.example.libmuse.MainActivity
-ADDED from C:\Users\NagatsuDaiki\libmuse_5.13.0\android\examples\TestLibMuseAndroid\app\src\main\AndroidManifest.xml:22:9-31:20
+ADDED from C:\Users\NagatsuDaiki\libmuse_5.13.0\android\examples\TestLibMuseAndroid\app\src\main\AndroidManifest.xml:24:9-33:20
 	android:screenOrientation
-		ADDED from C:\Users\NagatsuDaiki\libmuse_5.13.0\android\examples\TestLibMuseAndroid\app\src\main\AndroidManifest.xml:24:13-49
+		ADDED from C:\Users\NagatsuDaiki\libmuse_5.13.0\android\examples\TestLibMuseAndroid\app\src\main\AndroidManifest.xml:26:13-49
 	android:label
-		ADDED from C:\Users\NagatsuDaiki\libmuse_5.13.0\android\examples\TestLibMuseAndroid\app\src\main\AndroidManifest.xml:25:13-45
+		ADDED from C:\Users\NagatsuDaiki\libmuse_5.13.0\android\examples\TestLibMuseAndroid\app\src\main\AndroidManifest.xml:27:13-45
 	android:name
-		ADDED from C:\Users\NagatsuDaiki\libmuse_5.13.0\android\examples\TestLibMuseAndroid\app\src\main\AndroidManifest.xml:23:13-71
+		ADDED from C:\Users\NagatsuDaiki\libmuse_5.13.0\android\examples\TestLibMuseAndroid\app\src\main\AndroidManifest.xml:25:13-71
 intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
-ADDED from C:\Users\NagatsuDaiki\libmuse_5.13.0\android\examples\TestLibMuseAndroid\app\src\main\AndroidManifest.xml:26:13-30:29
+ADDED from C:\Users\NagatsuDaiki\libmuse_5.13.0\android\examples\TestLibMuseAndroid\app\src\main\AndroidManifest.xml:28:13-32:29
 action#android.intent.action.MAIN
-ADDED from C:\Users\NagatsuDaiki\libmuse_5.13.0\android\examples\TestLibMuseAndroid\app\src\main\AndroidManifest.xml:27:17-69
+ADDED from C:\Users\NagatsuDaiki\libmuse_5.13.0\android\examples\TestLibMuseAndroid\app\src\main\AndroidManifest.xml:29:17-69
 	android:name
-		ADDED from C:\Users\NagatsuDaiki\libmuse_5.13.0\android\examples\TestLibMuseAndroid\app\src\main\AndroidManifest.xml:27:25-66
+		ADDED from C:\Users\NagatsuDaiki\libmuse_5.13.0\android\examples\TestLibMuseAndroid\app\src\main\AndroidManifest.xml:29:25-66
 category#android.intent.category.LAUNCHER
-ADDED from C:\Users\NagatsuDaiki\libmuse_5.13.0\android\examples\TestLibMuseAndroid\app\src\main\AndroidManifest.xml:29:17-77
+ADDED from C:\Users\NagatsuDaiki\libmuse_5.13.0\android\examples\TestLibMuseAndroid\app\src\main\AndroidManifest.xml:31:17-77
 	android:name
-		ADDED from C:\Users\NagatsuDaiki\libmuse_5.13.0\android\examples\TestLibMuseAndroid\app\src\main\AndroidManifest.xml:29:27-74
+		ADDED from C:\Users\NagatsuDaiki\libmuse_5.13.0\android\examples\TestLibMuseAndroid\app\src\main\AndroidManifest.xml:31:27-74
+activity#com.google.android.gms.auth.api.signin.internal.SignInHubActivity
+ADDED from [com.google.android.gms:play-services-auth:9.0.2] C:\Users\NagatsuDaiki\libmuse_5.13.0\android\examples\TestLibMuseAndroid\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-auth\9.0.2\AndroidManifest.xml:21:9-24:46
+	android:excludeFromRecents
+		ADDED from [com.google.android.gms:play-services-auth:9.0.2] C:\Users\NagatsuDaiki\libmuse_5.13.0\android\examples\TestLibMuseAndroid\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-auth\9.0.2\AndroidManifest.xml:23:19-52
+	android:exported
+		ADDED from [com.google.android.gms:play-services-auth:9.0.2] C:\Users\NagatsuDaiki\libmuse_5.13.0\android\examples\TestLibMuseAndroid\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-auth\9.0.2\AndroidManifest.xml:24:19-43
+	android:theme
+		ADDED from [com.google.android.gms:play-services-auth:9.0.2] C:\Users\NagatsuDaiki\libmuse_5.13.0\android\examples\TestLibMuseAndroid\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-auth\9.0.2\AndroidManifest.xml:22:19-78
+	android:name
+		ADDED from [com.google.android.gms:play-services-auth:9.0.2] C:\Users\NagatsuDaiki\libmuse_5.13.0\android\examples\TestLibMuseAndroid\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-auth\9.0.2\AndroidManifest.xml:21:19-68
+service#com.google.android.gms.auth.api.signin.RevocationBoundService
+ADDED from [com.google.android.gms:play-services-auth:9.0.2] C:\Users\NagatsuDaiki\libmuse_5.13.0\android\examples\TestLibMuseAndroid\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-auth\9.0.2\AndroidManifest.xml:28:9-31:110
+	android:exported
+		ADDED from [com.google.android.gms:play-services-auth:9.0.2] C:\Users\NagatsuDaiki\libmuse_5.13.0\android\examples\TestLibMuseAndroid\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-auth\9.0.2\AndroidManifest.xml:30:13-36
+	android:permission
+		ADDED from [com.google.android.gms:play-services-auth:9.0.2] C:\Users\NagatsuDaiki\libmuse_5.13.0\android\examples\TestLibMuseAndroid\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-auth\9.0.2\AndroidManifest.xml:31:13-107
+	android:name
+		ADDED from [com.google.android.gms:play-services-auth:9.0.2] C:\Users\NagatsuDaiki\libmuse_5.13.0\android\examples\TestLibMuseAndroid\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-auth\9.0.2\AndroidManifest.xml:29:13-58
+activity#com.google.android.gms.common.api.GoogleApiActivity
+ADDED from [com.google.android.gms:play-services-base:9.0.2] C:\Users\NagatsuDaiki\libmuse_5.13.0\android\examples\TestLibMuseAndroid\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-base\9.0.2\AndroidManifest.xml:20:9-22:45
+	android:exported
+		ADDED from [com.google.android.gms:play-services-base:9.0.2] C:\Users\NagatsuDaiki\libmuse_5.13.0\android\examples\TestLibMuseAndroid\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-base\9.0.2\AndroidManifest.xml:22:19-43
+	android:theme
+		ADDED from [com.google.android.gms:play-services-base:9.0.2] C:\Users\NagatsuDaiki\libmuse_5.13.0\android\examples\TestLibMuseAndroid\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-base\9.0.2\AndroidManifest.xml:21:19-78
+	android:name
+		ADDED from [com.google.android.gms:play-services-base:9.0.2] C:\Users\NagatsuDaiki\libmuse_5.13.0\android\examples\TestLibMuseAndroid\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-base\9.0.2\AndroidManifest.xml:20:19-85
+meta-data#com.google.android.gms.version
+ADDED from [com.google.android.gms:play-services-basement:9.0.2] C:\Users\NagatsuDaiki\libmuse_5.13.0\android\examples\TestLibMuseAndroid\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\9.0.2\AndroidManifest.xml:21:9-23:69
+	android:value
+		ADDED from [com.google.android.gms:play-services-basement:9.0.2] C:\Users\NagatsuDaiki\libmuse_5.13.0\android\examples\TestLibMuseAndroid\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\9.0.2\AndroidManifest.xml:23:13-66
+	android:name
+		ADDED from [com.google.android.gms:play-services-basement:9.0.2] C:\Users\NagatsuDaiki\libmuse_5.13.0\android\examples\TestLibMuseAndroid\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\9.0.2\AndroidManifest.xml:22:13-58
+provider#com.google.firebase.provider.FirebaseInitProvider
+ADDED from [com.google.firebase:firebase-common:9.0.2] C:\Users\NagatsuDaiki\libmuse_5.13.0\android\examples\TestLibMuseAndroid\app\build\intermediates\exploded-aar\com.google.firebase\firebase-common\9.0.2\AndroidManifest.xml:7:9-11:39
+	android:authorities
+		ADDED from [com.google.firebase:firebase-common:9.0.2] C:\Users\NagatsuDaiki\libmuse_5.13.0\android\examples\TestLibMuseAndroid\app\build\intermediates\exploded-aar\com.google.firebase\firebase-common\9.0.2\AndroidManifest.xml:8:13-72
+	android:exported
+		ADDED from [com.google.firebase:firebase-common:9.0.2] C:\Users\NagatsuDaiki\libmuse_5.13.0\android\examples\TestLibMuseAndroid\app\build\intermediates\exploded-aar\com.google.firebase\firebase-common\9.0.2\AndroidManifest.xml:10:13-37
+	android:initOrder
+		ADDED from [com.google.firebase:firebase-common:9.0.2] C:\Users\NagatsuDaiki\libmuse_5.13.0\android\examples\TestLibMuseAndroid\app\build\intermediates\exploded-aar\com.google.firebase\firebase-common\9.0.2\AndroidManifest.xml:11:13-36
+	android:name
+		ADDED from [com.google.firebase:firebase-common:9.0.2] C:\Users\NagatsuDaiki\libmuse_5.13.0\android\examples\TestLibMuseAndroid\app\build\intermediates\exploded-aar\com.google.firebase\firebase-common\9.0.2\AndroidManifest.xml:9:13-58

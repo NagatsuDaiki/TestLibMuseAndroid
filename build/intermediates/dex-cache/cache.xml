@@ -1,3 +1,419 @@
 <?xml version="1.0" encoding="utf-8"?>
-<items version="2" />
+<items version="2" >
 
+    <item
+        is-multidex="false"
+        jar="C:\Users\NagatsuDaiki\libmuse_5.13.0\android\examples\TestLibMuseAndroid\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.1.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="5c5699834e9722f1c288fea2de82725d078ba127">
+        <dex dex="C:\Users\NagatsuDaiki\libmuse_5.13.0\android\examples\TestLibMuseAndroid\app\build\intermediates\pre-dexed\release\com.android.support-appcompat-v7-23.1.1_fe8a1e0cec1604d6252807bf574e3d1eff943b2f.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\NagatsuDaiki\libmuse_5.13.0\android\examples\TestLibMuseAndroid\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\jars\libs\internal_impl-23.1.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="a4de9c81ae239414e1ed0f86441b02abaf29bca9">
+        <dex dex="C:\Users\NagatsuDaiki\libmuse_5.13.0\android\examples\TestLibMuseAndroid\app\build\intermediates\pre-dexed\release\internal_impl-23.1.1_389172b6140dea7f25b0635a89a98efbe3f9df42.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\NagatsuDaiki\libmuse_5.13.0\android\examples\TestLibMuseAndroid\app\build\intermediates\exploded-aar\pub.devrel\easypermissions\0.1.5\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="2ffd97c466e0021572f3c7333839c71ecdf393ed">
+        <dex dex="C:\Users\NagatsuDaiki\libmuse_5.13.0\android\examples\TestLibMuseAndroid\app\build\intermediates\pre-dexed\release\pub.devrel-easypermissions-0.1.5_c9f9954b1488e9285e0f4e9552efd27169014a1d.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\NagatsuDaiki\.gradle\caches\modules-2\files-2.1\com.google.code.findbugs\jsr305\1.3.9\40719ea6961c0cb6afaeb6a921eaa1f6afd4cfdf\jsr305-1.3.9.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="40719ea6961c0cb6afaeb6a921eaa1f6afd4cfdf">
+        <dex dex="C:\Users\NagatsuDaiki\libmuse_5.13.0\android\examples\TestLibMuseAndroid\app\build\intermediates\transforms\dex\debug\folders\1000\10\jsr305-1.3.9_fa0d95b4b2c1a59a49e28888c798fd81c0623367\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\NagatsuDaiki\libmuse_5.13.0\android\examples\TestLibMuseAndroid\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\jars\libs\internal_impl-23.1.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="a4de9c81ae239414e1ed0f86441b02abaf29bca9">
+        <dex dex="C:\Users\NagatsuDaiki\libmuse_5.13.0\android\examples\TestLibMuseAndroid\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-23.1.1_389172b6140dea7f25b0635a89a98efbe3f9df42\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\NagatsuDaiki\libmuse_5.13.0\android\examples\TestLibMuseAndroid\app\build\intermediates\exploded-aar\pub.devrel\easypermissions\0.1.5\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="2ffd97c466e0021572f3c7333839c71ecdf393ed">
+        <dex dex="C:\Users\NagatsuDaiki\libmuse_5.13.0\android\examples\TestLibMuseAndroid\app\build\intermediates\transforms\dex\debug\folders\1000\10\pub.devrel-easypermissions-0.1.5_c9f9954b1488e9285e0f4e9552efd27169014a1d\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\NagatsuDaiki\libmuse_5.13.0\android\examples\TestLibMuseAndroid\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.1.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="5c5699834e9722f1c288fea2de82725d078ba127">
+        <dex dex="C:\Users\NagatsuDaiki\libmuse_5.13.0\android\examples\TestLibMuseAndroid\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-appcompat-v7-23.1.1_fe8a1e0cec1604d6252807bf574e3d1eff943b2f\classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\NagatsuDaiki\.gradle\caches\modules-2\files-2.1\com.google.api-client\google-api-client\1.22.0\244350c0c845c583717ade13f5666a452fd0cfa\google-api-client-1.22.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="0244350c0c845c583717ade13f5666a452fd0cfa">
+        <dex dex="C:\Users\NagatsuDaiki\libmuse_5.13.0\android\examples\TestLibMuseAndroid\app\build\intermediates\pre-dexed\release\google-api-client-1.22.0_cda3876160b1f578d7ea9352585289fefddd56d4.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\NagatsuDaiki\libmuse_5.13.0\android\examples\TestLibMuseAndroid\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="6cbc7773921fcfedbe55657578f0cbfe614778dc">
+        <dex dex="C:\Users\NagatsuDaiki\libmuse_5.13.0\android\examples\TestLibMuseAndroid\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-v4-23.1.1_739a0f7023d9ae1719128ef8b8435d865390dbaf\classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\NagatsuDaiki\libmuse_5.13.0\android\examples\TestLibMuseAndroid\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-auth-base\9.0.2\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="829c6e46cb221c2102801221c648b77113743e81">
+        <dex dex="C:\Users\NagatsuDaiki\libmuse_5.13.0\android\examples\TestLibMuseAndroid\app\build\intermediates\pre-dexed\release\com.google.android.gms-play-services-auth-base-9.0.2_874fbf78773944f1f3eaa0cf59f1955656cee186.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\NagatsuDaiki\libmuse_5.13.0\android\examples\TestLibMuseAndroid\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-auth-base\9.0.2\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="829c6e46cb221c2102801221c648b77113743e81">
+        <dex dex="C:\Users\NagatsuDaiki\libmuse_5.13.0\android\examples\TestLibMuseAndroid\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-auth-base-9.0.2_874fbf78773944f1f3eaa0cf59f1955656cee186\classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\NagatsuDaiki\libmuse_5.13.0\android\examples\TestLibMuseAndroid\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-base\9.0.2\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="94d9cedd04b124aed044ac71c451a292856d854c">
+        <dex dex="C:\Users\NagatsuDaiki\libmuse_5.13.0\android\examples\TestLibMuseAndroid\app\build\intermediates\pre-dexed\release\com.google.android.gms-play-services-base-9.0.2_e2c91da4ecfd8e11cbf25b09a4903a7e91a7848b.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\NagatsuDaiki\libmuse_5.13.0\android\examples\TestLibMuseAndroid\app\libs\libmuse_android.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="e0e7a9483598120cec51b3d74f2dc23ee5981588">
+        <dex dex="C:\Users\NagatsuDaiki\libmuse_5.13.0\android\examples\TestLibMuseAndroid\app\build\intermediates\pre-dexed\release\libmuse_android_7e4f0d9c36185591d507c723cff5191763b2349e.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\NagatsuDaiki\.gradle\caches\modules-2\files-2.1\com.google.http-client\google-http-client\1.22.0\d441fc58329c4a4c067acec04ac361627f66ecc8\google-http-client-1.22.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="d441fc58329c4a4c067acec04ac361627f66ecc8">
+        <dex dex="C:\Users\NagatsuDaiki\libmuse_5.13.0\android\examples\TestLibMuseAndroid\app\build\intermediates\pre-dexed\release\google-http-client-1.22.0_6f8beedb3bdb781f34452735db9e771cd4651d33.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\NagatsuDaiki\.gradle\caches\modules-2\files-2.1\com.google.api-client\google-api-client\1.22.0\244350c0c845c583717ade13f5666a452fd0cfa\google-api-client-1.22.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="0244350c0c845c583717ade13f5666a452fd0cfa">
+        <dex dex="C:\Users\NagatsuDaiki\libmuse_5.13.0\android\examples\TestLibMuseAndroid\app\build\intermediates\transforms\dex\debug\folders\1000\10\google-api-client-1.22.0_cda3876160b1f578d7ea9352585289fefddd56d4\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\NagatsuDaiki\libmuse_5.13.0\android\examples\TestLibMuseAndroid\app\libs\libmuse_android.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="e0e7a9483598120cec51b3d74f2dc23ee5981588">
+        <dex dex="C:\Users\NagatsuDaiki\libmuse_5.13.0\android\examples\TestLibMuseAndroid\app\build\intermediates\transforms\dex\debug\folders\1000\2\libmuse_android_7e4f0d9c36185591d507c723cff5191763b2349e\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\NagatsuDaiki\.gradle\caches\modules-2\files-2.1\com.google.http-client\google-http-client\1.22.0\d441fc58329c4a4c067acec04ac361627f66ecc8\google-http-client-1.22.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="d441fc58329c4a4c067acec04ac361627f66ecc8">
+        <dex dex="C:\Users\NagatsuDaiki\libmuse_5.13.0\android\examples\TestLibMuseAndroid\app\build\intermediates\transforms\dex\debug\folders\1000\10\google-http-client-1.22.0_6f8beedb3bdb781f34452735db9e771cd4651d33\classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\NagatsuDaiki\libmuse_5.13.0\android\examples\TestLibMuseAndroid\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="6cbc7773921fcfedbe55657578f0cbfe614778dc">
+        <dex dex="C:\Users\NagatsuDaiki\libmuse_5.13.0\android\examples\TestLibMuseAndroid\app\build\intermediates\pre-dexed\release\com.android.support-support-v4-23.1.1_739a0f7023d9ae1719128ef8b8435d865390dbaf.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\NagatsuDaiki\.gradle\caches\modules-2\files-2.1\com.fasterxml.jackson.core\jackson-core\2.1.3\f6c3aed1cdfa21b5c1737c915186ea93a95a58bd\jackson-core-2.1.3.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="f6c3aed1cdfa21b5c1737c915186ea93a95a58bd">
+        <dex dex="C:\Users\NagatsuDaiki\libmuse_5.13.0\android\examples\TestLibMuseAndroid\app\build\intermediates\pre-dexed\release\jackson-core-2.1.3_5405e3c49698610a9112746863687cf56b111e03.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\NagatsuDaiki\.gradle\caches\modules-2\files-2.1\com.google.http-client\google-http-client-android\1.22.0\6d1e1a76a16a244ab2f41775791be1dd0ec2878a\google-http-client-android-1.22.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="6d1e1a76a16a244ab2f41775791be1dd0ec2878a">
+        <dex dex="C:\Users\NagatsuDaiki\libmuse_5.13.0\android\examples\TestLibMuseAndroid\app\build\intermediates\transforms\dex\debug\folders\1000\10\google-http-client-android-1.22.0_ff109523677c01f483bf7db31bad981768891f2b\classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\NagatsuDaiki\.gradle\caches\modules-2\files-2.1\com.google.http-client\google-http-client-android\1.22.0\6d1e1a76a16a244ab2f41775791be1dd0ec2878a\google-http-client-android-1.22.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="6d1e1a76a16a244ab2f41775791be1dd0ec2878a">
+        <dex dex="C:\Users\NagatsuDaiki\libmuse_5.13.0\android\examples\TestLibMuseAndroid\app\build\intermediates\pre-dexed\release\google-http-client-android-1.22.0_ff109523677c01f483bf7db31bad981768891f2b.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\NagatsuDaiki\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\23.1.1\support-annotations-23.1.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="8d680ba5a623724d1fb0e81c36a790f023a6cede">
+        <dex dex="C:\Users\NagatsuDaiki\libmuse_5.13.0\android\examples\TestLibMuseAndroid\app\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-23.1.1_d28842941f02d3096eca9cb21747dbfe0c682260\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\NagatsuDaiki\.gradle\caches\modules-2\files-2.1\com.fasterxml.jackson.core\jackson-core\2.1.3\f6c3aed1cdfa21b5c1737c915186ea93a95a58bd\jackson-core-2.1.3.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="f6c3aed1cdfa21b5c1737c915186ea93a95a58bd">
+        <dex dex="C:\Users\NagatsuDaiki\libmuse_5.13.0\android\examples\TestLibMuseAndroid\app\build\intermediates\transforms\dex\debug\folders\1000\10\jackson-core-2.1.3_5405e3c49698610a9112746863687cf56b111e03\classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\NagatsuDaiki\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\23.1.1\support-annotations-23.1.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="8d680ba5a623724d1fb0e81c36a790f023a6cede">
+        <dex dex="C:\Users\NagatsuDaiki\libmuse_5.13.0\android\examples\TestLibMuseAndroid\app\build\intermediates\pre-dexed\release\support-annotations-23.1.1_d28842941f02d3096eca9cb21747dbfe0c682260.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\NagatsuDaiki\libmuse_5.13.0\android\examples\TestLibMuseAndroid\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-base\9.0.2\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="94d9cedd04b124aed044ac71c451a292856d854c">
+        <dex dex="C:\Users\NagatsuDaiki\libmuse_5.13.0\android\examples\TestLibMuseAndroid\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-base-9.0.2_e2c91da4ecfd8e11cbf25b09a4903a7e91a7848b\classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\NagatsuDaiki\libmuse_5.13.0\android\examples\TestLibMuseAndroid\app\build\intermediates\exploded-aar\com.google.firebase\firebase-common\9.0.2\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="9919563cffd8e3732e944d3c437d4b9575a08448">
+        <dex dex="C:\Users\NagatsuDaiki\libmuse_5.13.0\android\examples\TestLibMuseAndroid\app\build\intermediates\pre-dexed\release\com.google.firebase-firebase-common-9.0.2_c71be5b3b99ccd0832934e782cc60a0740af3524.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\NagatsuDaiki\libmuse_5.13.0\android\examples\TestLibMuseAndroid\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-tasks\9.0.2\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="aec1bc54964a85d851c2c1b1cb7f90f7dbd755ab">
+        <dex dex="C:\Users\NagatsuDaiki\libmuse_5.13.0\android\examples\TestLibMuseAndroid\app\build\intermediates\pre-dexed\release\com.google.android.gms-play-services-tasks-9.0.2_ce149feaa24f2af100fe58d1a6878dff9d3246a9.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\NagatsuDaiki\libmuse_5.13.0\android\examples\TestLibMuseAndroid\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\9.0.2\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="4022261eeea0d92eb2997a68d2c1f084a16abad9">
+        <dex dex="C:\Users\NagatsuDaiki\libmuse_5.13.0\android\examples\TestLibMuseAndroid\app\build\intermediates\pre-dexed\release\com.google.android.gms-play-services-basement-9.0.2_804f684fca4a167fde0b9ac34fe295cc9c31c2d1.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\NagatsuDaiki\.gradle\caches\modules-2\files-2.1\com.google.apis\google-api-services-sheets\v4-rev31-1.22.0\964a76f6c7e7752eac9d246c4995b19880b6da42\google-api-services-sheets-v4-rev31-1.22.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="964a76f6c7e7752eac9d246c4995b19880b6da42">
+        <dex dex="C:\Users\NagatsuDaiki\libmuse_5.13.0\android\examples\TestLibMuseAndroid\app\build\intermediates\transforms\dex\debug\folders\1000\10\google-api-services-sheets-v4-rev31-1.22.0_f7eda274836564a9ad3d9206a43d732185f8bb5e\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\NagatsuDaiki\libmuse_5.13.0\android\examples\TestLibMuseAndroid\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-tasks\9.0.2\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="aec1bc54964a85d851c2c1b1cb7f90f7dbd755ab">
+        <dex dex="C:\Users\NagatsuDaiki\libmuse_5.13.0\android\examples\TestLibMuseAndroid\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-tasks-9.0.2_ce149feaa24f2af100fe58d1a6878dff9d3246a9\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\NagatsuDaiki\libmuse_5.13.0\android\examples\TestLibMuseAndroid\app\build\intermediates\exploded-aar\com.google.firebase\firebase-common\9.0.2\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="9919563cffd8e3732e944d3c437d4b9575a08448">
+        <dex dex="C:\Users\NagatsuDaiki\libmuse_5.13.0\android\examples\TestLibMuseAndroid\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-common-9.0.2_c71be5b3b99ccd0832934e782cc60a0740af3524\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\NagatsuDaiki\libmuse_5.13.0\android\examples\TestLibMuseAndroid\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="15c19718e613673d1640599aa4e93182444338f2">
+        <dex dex="C:\Users\NagatsuDaiki\libmuse_5.13.0\android\examples\TestLibMuseAndroid\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_77e4ef61ddeebe54947de485e5ff0f8b559fc251\classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\NagatsuDaiki\.gradle\caches\modules-2\files-2.1\com.google.apis\google-api-services-sheets\v4-rev31-1.22.0\964a76f6c7e7752eac9d246c4995b19880b6da42\google-api-services-sheets-v4-rev31-1.22.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="964a76f6c7e7752eac9d246c4995b19880b6da42">
+        <dex dex="C:\Users\NagatsuDaiki\libmuse_5.13.0\android\examples\TestLibMuseAndroid\app\build\intermediates\pre-dexed\release\google-api-services-sheets-v4-rev31-1.22.0_f7eda274836564a9ad3d9206a43d732185f8bb5e.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\NagatsuDaiki\libmuse_5.13.0\android\examples\TestLibMuseAndroid\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="2c598852473c9315528f27ac716234a0937fb84b">
+        <dex dex="C:\Users\NagatsuDaiki\libmuse_5.13.0\android\examples\TestLibMuseAndroid\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_c0d32316d8493467cf7b8363cfe3fa491e53d044\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\NagatsuDaiki\libmuse_5.13.0\android\examples\TestLibMuseAndroid\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\9.0.2\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="4022261eeea0d92eb2997a68d2c1f084a16abad9">
+        <dex dex="C:\Users\NagatsuDaiki\libmuse_5.13.0\android\examples\TestLibMuseAndroid\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-basement-9.0.2_804f684fca4a167fde0b9ac34fe295cc9c31c2d1\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\NagatsuDaiki\.gradle\caches\modules-2\files-2.1\com.google.api-client\google-api-client-android\1.22.0\7a0fe12b7d8189a821934d6f9d6586d00180e461\google-api-client-android-1.22.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="7a0fe12b7d8189a821934d6f9d6586d00180e461">
+        <dex dex="C:\Users\NagatsuDaiki\libmuse_5.13.0\android\examples\TestLibMuseAndroid\app\build\intermediates\transforms\dex\debug\folders\1000\10\google-api-client-android-1.22.0_5024551995138d06eef973fc46d474f9af50d905\classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\NagatsuDaiki\.gradle\caches\modules-2\files-2.1\com.google.http-client\google-http-client-jackson2\1.22.0\cc014d64ae11117e159d334c99d9c246d9b36f44\google-http-client-jackson2-1.22.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="cc014d64ae11117e159d334c99d9c246d9b36f44">
+        <dex dex="C:\Users\NagatsuDaiki\libmuse_5.13.0\android\examples\TestLibMuseAndroid\app\build\intermediates\pre-dexed\release\google-http-client-jackson2-1.22.0_ca0ea545947e8de36b0489cd9e40206058fdaae3.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\NagatsuDaiki\.gradle\caches\modules-2\files-2.1\com.google.api-client\google-api-client-android\1.22.0\7a0fe12b7d8189a821934d6f9d6586d00180e461\google-api-client-android-1.22.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="7a0fe12b7d8189a821934d6f9d6586d00180e461">
+        <dex dex="C:\Users\NagatsuDaiki\libmuse_5.13.0\android\examples\TestLibMuseAndroid\app\build\intermediates\pre-dexed\release\google-api-client-android-1.22.0_5024551995138d06eef973fc46d474f9af50d905.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\NagatsuDaiki\.gradle\caches\modules-2\files-2.1\com.google.code.findbugs\jsr305\1.3.9\40719ea6961c0cb6afaeb6a921eaa1f6afd4cfdf\jsr305-1.3.9.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="40719ea6961c0cb6afaeb6a921eaa1f6afd4cfdf">
+        <dex dex="C:\Users\NagatsuDaiki\libmuse_5.13.0\android\examples\TestLibMuseAndroid\app\build\intermediates\pre-dexed\release\jsr305-1.3.9_fa0d95b4b2c1a59a49e28888c798fd81c0623367.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\NagatsuDaiki\.gradle\caches\modules-2\files-2.1\com.google.guava\guava-jdk5\17.0\463f8378feba44df7ba7cd9272d01837dad62b36\guava-jdk5-17.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="463f8378feba44df7ba7cd9272d01837dad62b36">
+        <dex dex="C:\Users\NagatsuDaiki\libmuse_5.13.0\android\examples\TestLibMuseAndroid\app\build\intermediates\pre-dexed\release\guava-jdk5-17.0_059084b09ad95e4b7203303ba623d9f1e6a10d29.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\NagatsuDaiki\.gradle\caches\modules-2\files-2.1\com.google.oauth-client\google-oauth-client\1.22.0\1d63f369ac78e4838a3197147012026e791008cb\google-oauth-client-1.22.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="1d63f369ac78e4838a3197147012026e791008cb">
+        <dex dex="C:\Users\NagatsuDaiki\libmuse_5.13.0\android\examples\TestLibMuseAndroid\app\build\intermediates\transforms\dex\debug\folders\1000\10\google-oauth-client-1.22.0_dc6676aaea7a64a4bb14380d2425739640681c08\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\NagatsuDaiki\.gradle\caches\modules-2\files-2.1\com.google.guava\guava-jdk5\17.0\463f8378feba44df7ba7cd9272d01837dad62b36\guava-jdk5-17.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="463f8378feba44df7ba7cd9272d01837dad62b36">
+        <dex dex="C:\Users\NagatsuDaiki\libmuse_5.13.0\android\examples\TestLibMuseAndroid\app\build\intermediates\transforms\dex\debug\folders\1000\10\guava-jdk5-17.0_059084b09ad95e4b7203303ba623d9f1e6a10d29\classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\NagatsuDaiki\.gradle\caches\modules-2\files-2.1\com.google.oauth-client\google-oauth-client\1.22.0\1d63f369ac78e4838a3197147012026e791008cb\google-oauth-client-1.22.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="1d63f369ac78e4838a3197147012026e791008cb">
+        <dex dex="C:\Users\NagatsuDaiki\libmuse_5.13.0\android\examples\TestLibMuseAndroid\app\build\intermediates\pre-dexed\release\google-oauth-client-1.22.0_dc6676aaea7a64a4bb14380d2425739640681c08.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\NagatsuDaiki\libmuse_5.13.0\android\examples\TestLibMuseAndroid\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-auth\9.0.2\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="060a7157438a0b1b0706b99c430fb3ecbc5a79a4">
+        <dex dex="C:\Users\NagatsuDaiki\libmuse_5.13.0\android\examples\TestLibMuseAndroid\app\build\intermediates\pre-dexed\release\com.google.android.gms-play-services-auth-9.0.2_c1149f302dc48004fea224c0a742299287d116e1.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\NagatsuDaiki\.gradle\caches\modules-2\files-2.1\com.google.http-client\google-http-client-jackson2\1.22.0\cc014d64ae11117e159d334c99d9c246d9b36f44\google-http-client-jackson2-1.22.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="cc014d64ae11117e159d334c99d9c246d9b36f44">
+        <dex dex="C:\Users\NagatsuDaiki\libmuse_5.13.0\android\examples\TestLibMuseAndroid\app\build\intermediates\transforms\dex\debug\folders\1000\10\google-http-client-jackson2-1.22.0_ca0ea545947e8de36b0489cd9e40206058fdaae3\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\NagatsuDaiki\libmuse_5.13.0\android\examples\TestLibMuseAndroid\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-auth\9.0.2\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="060a7157438a0b1b0706b99c430fb3ecbc5a79a4">
+        <dex dex="C:\Users\NagatsuDaiki\libmuse_5.13.0\android\examples\TestLibMuseAndroid\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-auth-9.0.2_c1149f302dc48004fea224c0a742299287d116e1\classes.dex" />
+    </item>
+
+</items>
